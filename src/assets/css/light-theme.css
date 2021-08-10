@@ -1,0 +1,7 @@
+:root {
+    --primary-text-color: #333333;
+    --secondary-text-color: #585858;
+    --page-background: #fff;
+    --active-color: rgb(57 155 255);
+    --active-color-transparent: rgb(57 155 255 / 15%);
+}
