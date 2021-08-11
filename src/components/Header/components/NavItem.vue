@@ -5,7 +5,7 @@
     :target="target"
     tabindex="0"
     :class="['nav-item', classname]"
-    role="link"
+    :role="href ? 'link' : ''"
     rel="noopener noreferer nofollow"
   >
     <slot>Link</slot>
