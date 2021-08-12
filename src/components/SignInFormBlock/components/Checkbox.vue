@@ -1,7 +1,12 @@
 <template>
   <div class="form-checkbox">
     <label :for="name">
-      <input type="checkbox" :name="name" :id="name" :value="1" />
+      <input
+        type="checkbox"
+        :name="name"
+        @change="updateInputValue"
+        :id="name"
+      />
       <span>{{ label }}</span>
     </label>
   </div>
@@ -11,19 +16,25 @@
 export default {
   name: "Checkbox",
   props: {
+    modelValue: {
+      type: Boolean,
+    },
     label: {
       type: String,
     },
     name: {
       type: String,
     },
-    defaultValue: {
-      type: Boolean,
-      default: true,
-    },
   },
+  emits: ["update:modelValue"],
   data() {
     return {};
+  },
+  methods: {
+    updateInputValue(e) {
+      console.log(this.modelValue);
+      this.$emit("update:modelValue", e.target.checked);
+    },
   },
 };
 </script>

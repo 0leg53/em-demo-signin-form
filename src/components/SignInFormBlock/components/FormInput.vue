@@ -8,6 +8,7 @@
       :placeholder="placeholder"
       :required="required ? 'required' : ''"
       :class="['form-input__field', className]"
+      @input="updateInputValue"
     />
   </div>
 </template>
@@ -16,6 +17,9 @@
 export default {
   name: "FormInput",
   props: {
+    modelValue: {
+      type: String,
+    },
     labelText: {
       type: String,
     },
@@ -37,9 +41,15 @@ export default {
       type: String,
     },
   },
+  emits: ["update:modelValue"],
 
   data() {
     return {};
+  },
+  methods: {
+    updateInputValue(e) {
+      this.$emit("update:modelValue", e.target.value);
+    },
   },
 };
 </script>
