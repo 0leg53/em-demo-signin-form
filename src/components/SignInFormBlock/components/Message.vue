@@ -19,6 +19,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss" scoped>
 .message-block {
   width: 100%;

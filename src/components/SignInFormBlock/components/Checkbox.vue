@@ -32,7 +32,6 @@ export default {
   },
   methods: {
     updateInputValue(e) {
-      console.log(this.modelValue);
       this.$emit("update:modelValue", e.target.checked);
     },
   },

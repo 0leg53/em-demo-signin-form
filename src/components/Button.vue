@@ -1,5 +1,5 @@
 <template>
-  <button class="button" :type="buttonType">
+  <button :class="['button', size]" @click="$emit('click')" :type="buttonType">
     <slot></slot>
   </button>
 </template>
@@ -8,6 +8,10 @@
 export default {
   name: "Button",
   props: {
+    size: {
+      type: String,
+      default: "",
+    },
     buttonType: {
       type: String,
       default: "submit",
@@ -21,9 +25,7 @@ export default {
 
 <style lang="scss" scoped>
 .button {
-  width: 100%;
   padding: 1rem;
-  width: 100%;
   font-size: 0.9rem;
   border: 1px solid var(--active-color);
   background-color: var(--active-color);
@@ -34,6 +36,9 @@ export default {
   font-family: inherit;
   cursor: pointer;
   transition: color 0.2s ease, background-color 0.2s ease;
+  &.fullwidth {
+    width: 100%;
+  }
   &:hover,
   &:focus {
     color: var(--primary-text-color);
