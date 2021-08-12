@@ -1,12 +1,13 @@
 <template>
-  <form
-    method="POST"
-    action="/submit-form"
-    @submit.prevent="onFormSubmit"
-    class="sign-in-form"
-  >
+  <form method="POST" @submit.prevent="onFormSubmit" class="sign-in-form">
+    <Message
+      messageType="error"
+      v-for="(item, index) in errorList"
+      :key="index"
+      :content="item"
+    />
     <FormInput
-      v-model.trim="formdata.username"
+      v-model.trim="formData.username"
       :labelText="'Your username:'"
       :inputName="'username'"
       inputType="text"
@@ -14,7 +15,7 @@
       :placeholder="'Please, fill in your username'"
     />
     <FormInput
-      v-model.trim="formdata.password"
+      v-model.trim="formData.password"
       :labelText="'Your password:'"
       :inputName="'password'"
       inputType="password"
@@ -22,7 +23,7 @@
       :placeholder="'Please, fill in your password'"
     />
     <Checkbox
-      v-model="formdata.remember"
+      v-model="formData.remember"
       :label="'Remember me for 1 day'"
       :name="'remember-me'"
     />
@@ -31,29 +32,51 @@
 </template>
 
 <script>
+import axios from "axios";
+
+import base64Encoder from "../../../helpers/base64encode";
+
 import FormInput from "./FormInput.vue";
 import Button from "./Button.vue";
 import Checkbox from "./Checkbox.vue";
+import Message from "./Message.vue";
+
 export default {
   name: "SignInForm",
   data() {
     return {
-      formdata: {
+      formData: {
         username: "",
         password: "",
         remember: false,
       },
+      errorList: [],
     };
   },
   methods: {
     onFormSubmit() {
-      console.log("asd");
+      const TOKEN = base64Encoder(
+        this.formData.username,
+        this.formData.password
+      );
+      this.errorList = [];
+      axios.get("/usersDB.json").then((response) => {
+        const USER = response.data.find((item) => {
+          return item.token === TOKEN;
+        });
+        if (!USER) {
+          this.errorList.push("Invalid credentials. Please try again!");
+          return false;
+        }
+        console.log(USER);
+      });
     },
   },
   components: {
     FormInput,
     Button,
     Checkbox,
+    Message,
   },
 };
 </script>
