@@ -1,17 +1,17 @@
 <template>
   <Page>
-    <SignInForm />
+    <SignInFormBlock />
   </Page>
 </template>
 
 <script>
 import Page from "./components/Page.vue";
-import SignInForm from "./components/SignInForm/index.vue";
+import SignInFormBlock from "./components/SignInFormBlock/index.vue";
 export default {
   name: "App",
   components: {
     Page,
-    SignInForm,
+    SignInFormBlock,
   },
 };
 </script>

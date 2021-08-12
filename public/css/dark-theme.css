@@ -1,5 +1,6 @@
 :root {
     --primary-text-color: #fff;
+    --primary-text-color-inversion: rgb(32 32 35);
     --secondary-text-color: #afafaf;
     --page-background: rgb(32 32 35);
     --active-color: rgb(199 199 199);
