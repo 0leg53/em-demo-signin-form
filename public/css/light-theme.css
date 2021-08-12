@@ -3,6 +3,6 @@
     --primary-text-color-inversion: #fff;
     --secondary-text-color: #585858;
     --page-background: #fff;
-    --active-color: rgb(57 155 255);
-    --active-color-transparent: rgb(57 155 255 / 15%);
+    --active-color: rgb(20 100 255);
+    --active-color-transparent: rgb(20 100 255 / 10%);
 }

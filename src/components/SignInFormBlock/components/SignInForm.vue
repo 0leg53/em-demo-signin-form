@@ -10,14 +10,14 @@
       :inputName="'username'"
       inputType="text"
       :required="true"
-      :placeholder="'Please, fill with your username'"
+      :placeholder="'Please, fill in your username'"
     />
     <FormInput
       :labelText="'Your password:'"
       :inputName="'password'"
       inputType="password"
       :required="true"
-      :placeholder="'Please, fill with your password'"
+      :placeholder="'Please, fill in your password'"
     />
     <Checkbox
       :label="'Remember me for 1 day'"

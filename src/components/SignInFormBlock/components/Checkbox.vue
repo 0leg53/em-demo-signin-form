@@ -52,14 +52,14 @@ export default {
       }
       &:checked + span::after {
         content: "";
-        border-right: 1px solid var(--primary-text-color-inversion);
-        border-bottom: 1px solid var(--primary-text-color-inversion);
+        border-right: 2px solid var(--primary-text-color-inversion);
+        border-bottom: 2px solid var(--primary-text-color-inversion);
         width: 0.25rem;
         height: 0.4rem;
         display: inline-block;
         position: absolute;
         z-index: 2;
-        top: 0.25rem;
+        top: 0.23rem;
         left: 0.35rem;
         transform: rotate(40deg);
       }
@@ -80,8 +80,9 @@ export default {
         flex-shrink: 0;
         flex-grow: 0;
         border: 1px solid var(--active-color);
-        border-radius: 0.2rem;
+        border-radius: 4px;
         margin-right: 0.5rem;
+        transition: background-color 0.2s ease;
       }
     }
   }
