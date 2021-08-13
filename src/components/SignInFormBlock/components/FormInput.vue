@@ -8,7 +8,9 @@
       :placeholder="placeholder"
       :required="required ? 'required' : ''"
       :class="['form-input__field', className]"
+      :maxlength="maxLength"
       @input="updateInputValue"
+      tabindex="0"
     />
   </div>
 </template>
@@ -29,6 +31,10 @@ export default {
     inputType: {
       type: String,
       default: "text",
+    },
+    maxLength: {
+      type: Number,
+      default: 128,
     },
     required: {
       type: Boolean,

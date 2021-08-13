@@ -6,6 +6,7 @@
         :name="name"
         @change="updateInputValue"
         :id="name"
+        tabindex="0"
       />
       <span>{{ label }}</span>
     </label>

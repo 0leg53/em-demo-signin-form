@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="container">
       <p>Just another demo page at github.</p>
-      <p>For timetravelers: today is {{ todayDate.getFullYear() }}</p>
+      <p>For timetravelers: today is {{ todayDate.getFullYear() }} СЕ</p>
     </div>
   </footer>
 </template>
@@ -20,7 +20,6 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
-  /* padding: 0.5rem 0; */
   font-size: 0.8rem;
   color: var(--secondary-text-color);
   p {

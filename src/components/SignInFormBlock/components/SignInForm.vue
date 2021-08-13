@@ -11,6 +11,7 @@
       :labelText="'Your username:'"
       :inputName="'username'"
       inputType="text"
+      :maxLength="64"
       :required="true"
       :placeholder="'Please, fill in your username'"
     />
@@ -19,6 +20,7 @@
       :labelText="'Your password:'"
       :inputName="'password'"
       inputType="password"
+      :maxLength="64"
       :required="true"
       :placeholder="'Please, fill in your password'"
     />
@@ -57,6 +59,7 @@ export default {
         password: "",
         remember: false,
       },
+      isFormSubmiting: false,
       errorList: [],
     };
   },

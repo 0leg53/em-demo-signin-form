@@ -1,5 +1,10 @@
 <template>
-  <button :class="['button', size]" @click="$emit('click')" :type="buttonType">
+  <button
+    :class="['button', size]"
+    @click="$emit('click')"
+    :type="buttonType"
+    tabindex="0"
+  >
     <slot></slot>
   </button>
 </template>
