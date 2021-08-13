@@ -1,5 +1,5 @@
-dev: `vite`
+dev: `yarn dev`
 
-build: `vite build`
+build: `yarn build`
 
-serve: `vite preview`
+serve: `yarn serve`
